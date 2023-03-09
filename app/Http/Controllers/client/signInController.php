@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers\client;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PDO;
 use Session;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +14,7 @@ class signInController extends Controller
 {
     public function getsignIn()
     {
-        return view('signIn');
+        return view('client.signIn');
     }
 
     public function postSignIn(Request $req)
@@ -22,12 +25,18 @@ class signInController extends Controller
         ];
 
         $messages = [
-            'required' => 'This field is required',
+            'required' => 'This field ais required',
         ];
 
         $req->validate($rules, $messages);
         $password = $req->password;
-        if ($req->userName == Session::get('userName') && Hash::check($password, Session::get('password'))) {
+
+        $user = [
+            'email' => $req->userName,
+            'password' => $req->password,
+        ];
+
+        if (Auth::attempt($user)) {
             return redirect()->route('home-page');
         } else {
             return redirect()->back();

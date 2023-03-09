@@ -28,8 +28,8 @@
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 </head>
 
 <body>
@@ -1863,7 +1863,7 @@
                                     <div class="row gx-lg-5">
                                         <div class="col-xl-4 col-md-8 mx-auto">
                                             <div class="product-img-slider sticky-side-div">
-                                                <div class="swiper product-thumbnail-slider p-2 rounded bg-light">
+                                                <div class="swiper product-thumbnail-slider p-2 rounded bg-light bigSwiper">
                                                     <div class="swiper-wrapper">
                                                         <div class="swiper-slide">
                                                             <img src="assets/images/products/img-8.png" alt="" class="img-fluid d-block" />
@@ -2015,15 +2015,15 @@
                                                             <h5 class="fs-14">Sizes :</h5>
                                                             <div class="d-flex flex-wrap gap-2 Size" >
                                                                 <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Out of Stock" data-id="s">
-                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio1"  data-id="s" >
+                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio1"  >
                                                                     <label class="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center" for="productsize-radio1" >S</label>
                                                                 </div>
                                                                 <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="04 Items Available" data-id="m" >
-                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio2" data-id="m">
+                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio2">
                                                                     <label class="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center" for="productsize-radio2" data-id="m">M</label>
                                                                 </div>
                                                                 <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="06 Items Available" data-id="l" >
-                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio3" data-id="l">
+                                                                    <input type="radio" class="btn-check" name="productsize-radio" id="productsize-radio3" >
                                                                     <label class="btn btn-soft-primary avatar-xs rounded-circle p-0 d-flex justify-content-center align-items-center" for="productsize-radio3" data-id="l">L</label>
                                                                 </div>
 
@@ -2040,11 +2040,11 @@
                                                         <div class=" mt-4">
                                                             <h5 class="fs-14">Colors :</h5>
                                                             <div class="d-flex flex-wrap gap-2 chooseColor" >
-                                                                <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Out of Stock">
+                                                                {{-- <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Out of Stock">
                                                                     <button type="button" class="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-primary" disabled>
                                                                         <i class="ri-checkbox-blank-circle-fill"></i>
                                                                     </button>
-                                                                </div>
+                                                                </div> --}}
                                                                 <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="03 Items Available" data-id="blue">
                                                                     <button type="button" class="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-secondary">
                                                                         <i class="ri-checkbox-blank-circle-fill"></i>
@@ -2060,7 +2060,7 @@
                                                                         <i class="ri-checkbox-blank-circle-fill"></i>
                                                                     </button>
                                                                 </div>
-                                                                <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="01 Items Available">
+                                                                {{-- <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="01 Items Available">
                                                                     <button type="button" class="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-warning">
                                                                         <i class="ri-checkbox-blank-circle-fill"></i>
                                                                     </button>
@@ -2079,7 +2079,7 @@
                                                                     <button type="button" class="btn avatar-xs p-0 d-flex align-items-center justify-content-center border rounded-circle fs-20 text-dark">
                                                                         <i class="ri-checkbox-blank-circle-fill"></i>
                                                                     </button>
-                                                                </div>
+                                                                </div> --}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -3180,10 +3180,11 @@
 
     <!-- ecommerce product details init -->
     <script src="assets/js/pages/ecommerce-product-details.init.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="assets/js/productDetails.js" ></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/chooseColor.js"></script>
 </body>
 
 

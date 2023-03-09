@@ -1,25 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers\client;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class productDetailsController extends Controller
 {
     public function getProductDetails()
     {
-        return view('productDetails');
+        return view('client.productDetails');
     }
 
     public function chooseColor(Request $req)
     {
         $data = $req->all();
-
         $color = [
             'blue' => [
                 'price' => 1,
                 'order' => 200,
                 'revenue'   => 123,
+                'images'=>0,
                 'size'  => [
                     's' => [
                         'stock' => 10,
@@ -38,6 +41,7 @@ class productDetailsController extends Controller
             'green' => [
                 'price' => 2,
                 'order' => 210,
+                'images'=>1,
                 'revenue'   => 345,
                 'size'  => [
                     's' => [
@@ -58,6 +62,7 @@ class productDetailsController extends Controller
                 'price' => 3,
                 'order' => 220,
                 'revenue'   => 321,
+                'images'=>2,
                 'size'  => [
                     's' => [
                         'stock' => 18,
@@ -79,7 +84,7 @@ class productDetailsController extends Controller
             'price' => 0,
             'order' => 0,
             'revenue' => 0,
-            'images' => [],
+            'images' => 0,
             'stock' => 0
         ], $color[strtolower($data['color'])] ?? []);
 
